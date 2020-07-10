@@ -276,17 +276,17 @@ result = evaluate(model, test_loader)
 result
 
 # Saving and Loading Model Parameters
-torch.save(model.state_dict(), 'mnist-logistic.pth')
+torch.save(model.state_dict(), 'mnist-logistic-20-epochs.pth')
 
 model.state_dict()
 
 model2 = MnistModel()
-model2.load_state_dict(torch.load('mnist-logistic.pth'))
+model2.load_state_dict(torch.load('mnist-logistic-20-epochs.pth'))
 model2.state_dict()
 
 # Sanity check
 test_loader = DataLoader(test_dataset, batch_size=256)
 result = evaluate(model2, test_loader)
-result
+print(result)
 
 
